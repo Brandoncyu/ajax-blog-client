@@ -19,7 +19,10 @@ function initLinks () {
 window.sidebarView = {
   init (posts, id) {
     document.querySelector('#sidebar').innerHTML = sidebarTemplate(posts)
-    document.querySelector(`[href="#/posts/${id}"]`).classList.add('active')
+
+    const active = document.querySelector(`[href="#/posts/${id}"]`)
+    if (active) active.classList.add('active')
+
     initLinks()
   }
 }

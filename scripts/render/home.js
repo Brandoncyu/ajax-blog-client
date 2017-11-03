@@ -3,14 +3,21 @@ window.homeView = {
     Post.index()
       .then(({ data: { posts } }) => {
         let id = determinePost()
-        if (!id) {
+        if (!id && posts[0]) {
           goToPost(posts[0])
           id = determinePost()
         }
 
-        const selected = posts.find(post => post.id == id)
-        sidebarView.init(posts, id)
-        postView.init(selected)
+        if (id) {
+          const selected = posts.find(post => post.id == id)
+          sidebarView.init(posts, id)
+          postView.init(selected)
+        }
+
+        if (!posts.length) {
+          document.querySelector('#sidebar').innerHTML = ''
+          document.querySelector('#view').innerHTML = welcomeTemplate()
+        }
       })
   }
 }
