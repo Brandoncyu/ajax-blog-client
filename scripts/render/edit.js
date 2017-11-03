@@ -5,10 +5,7 @@ function editPost (event) {
   const content = document.querySelector('#content').value
 
   Post.update(id, { title, content })
-  .then(({ data: { post } }) => {
-    window.location.hash = `#/posts/${post.id}`
-    homeView.init()
-  })
+  .then(({ data: { post } }) => goToPost(post))
   .catch(errorsView.show)
 }
 

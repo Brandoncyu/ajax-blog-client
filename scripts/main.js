@@ -6,6 +6,4 @@ homeView.init()
 
 window.onhashchange = () => homeView.init()
 
-document.querySelector('#create-post').addEventListener('click', event => {
-  newPostView.init()
-})
+document.querySelector('#create-post').addEventListener('click', newPostView.init)

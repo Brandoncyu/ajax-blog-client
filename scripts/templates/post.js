@@ -11,7 +11,7 @@ function postTemplate (post) {
       <aside class="my-4">
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link" id="edit-post" href="#">Edit</a>
+            <a class="nav-link" id="edit-post" href="#/posts/${post.id}/edit">Edit</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-danger" id="delete-post" href="#">Delete</a>

@@ -1,5 +1,5 @@
 function determinePost () {
-  return window.location.hash.replace('#/posts/','')
+  return window.location.hash.replace('#/posts/','').replace(/\/.+/,'')
 }
 
 function goToPost (post) {

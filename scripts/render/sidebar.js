@@ -3,8 +3,6 @@ function goHome (event) {
 
   const hash = event.target.getAttribute('href')
   window.location.hash = hash
-
-  homeView.init()
 }
 
 function addLinkEventHandler (link) {

@@ -1,20 +1,13 @@
 function editPostEventHandler (event) {
-  event.preventDefault()
-
   const id = determinePost()
-  Post.find(id).then(({ data: { post }}) => {
-    editPostView.init(post)
-  })
+  Post.find(id).then(({ data: { post }}) => editPostView.init(post))
 }
 
 function deletePostEventHandler (event) {
   event.preventDefault()
 
   const id = determinePost()
-  Post.destroy(id).then(() => {
-    window.location.hash = ''
-    homeView.init()
-  })
+  Post.destroy(id).then(() => goToPost({ id: '' }))
 }
 
 window.postView = {
