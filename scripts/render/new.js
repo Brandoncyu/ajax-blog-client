@@ -8,9 +8,7 @@ function createPost (event) {
     window.location.hash = `#/posts/${post.id}`
     homeView.init()
   })
-  .catch(error => {
-    console.error(error.response.data.error)
-  })
+  .catch(errorsView.show)
 }
 
 window.newPostView = {

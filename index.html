@@ -16,6 +16,7 @@
     <script src="scripts/render/new.js" charset="utf-8"></script>
     <script src="scripts/render/edit.js" charset="utf-8"></script>
     <script src="scripts/render/home.js" charset="utf-8"></script>
+    <script src="scripts/render/errors.js" charset="utf-8"></script>
     <script src="scripts/util.js" charset="utf-8"></script>
     <script defer src="scripts/main.js" charset="utf-8"></script>
   </head>
@@ -31,6 +32,11 @@
     </div>
 
     <div class="container">
+      <div class="row">
+        <div class="col">
+          <section style="display: none;" class="alert alert-danger text-center" id="errors"></section>
+        </div>
+      </div>
       <div class="row">
         <div id="sidebar" class="col-4"></div>
         <div id="view" class="col-8"></div>

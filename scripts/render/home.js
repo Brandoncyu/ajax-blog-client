@@ -2,6 +2,8 @@ window.homeView = {
   init () {
     Post.index()
       .then(({ data: { posts } }) => {
+        errorsView.hide()
+        
         let id = determinePost()
         if (!id && posts[0]) {
           goToPost(posts[0])
